@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{>header}}
-  <body>
-    <div class="container">
-       <div>
-        <h1>{{title}}</h1>
-        <p>Use this site to get your weather </p>
-      </div>
+{{>header}}
+  <div class="min-contant">
+      <h1>{{title}}</h1>
+      <p>Use this site to get your weather </p>
+      <form>
+        <input type="text" placeholder="Location.." />
+        <button>Search</button>
+      </form>
+      <p id="message-1"></p>
+      <p id="message-2"></p>
+  </div>
       
-          {{>footer}}
-    </div>
-  </body>
-</html>
+{{>footer}}

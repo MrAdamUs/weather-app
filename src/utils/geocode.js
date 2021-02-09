@@ -7,16 +7,16 @@ const geocode = (address, callback) => {
     address
   )}.json?access_token=${token}&limit=1`;
 
-  request({ url: geocodURL, json: true }, (err, res) => {
+  request({ url: geocodURL, json: true }, (err, { body }) => {
     if (err) {
       callback('Unable to connect to weather service!', undefined);
-    } else if (res.body.features === 0) {
+    } else if (body.features.length === 0) {
       callback('Unable to find location', undefined);
     } else {
       callback(undefined, {
-        longitude: res.body.features[0].center[0],
-        latitude: res.body.features[0].center[1],
-        location: res.body.features[0].place_name,
+        longitude: body.features[0].center[0],
+        latitude: body.features[0].center[1],
+        location: body.features[0].place_name,
       });
     }
   });
