@@ -20,21 +20,21 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather',
-    name: 'Adam Mawlawi',
+    name: 'MrAdam',
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About me',
-    name: 'Adam Mawlawi',
+    name: 'MrAdam',
   });
 });
 
 app.get(`/help`, (req, res) => {
   res.render('help', {
     title: 'Help Page',
-    name: 'Adam Mawlawi',
+    name: 'MrAdam',
   });
 });
 
